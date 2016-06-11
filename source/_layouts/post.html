@@ -1,0 +1,19 @@
+---
+layout: default
+single: true
+---
+
+<article class="post">{% include article.html %}</article>
+<section class="follow-me">
+	If you like this you're welcome to follow me on <a href="http://twitter.com/marcusstenbeck">Twitter</a> and <a href="http://codepen.io/marcusstenbeck/">Codepen</a>.
+</section>
+<footer id="footer" class="inner">{% include footer.html %}</footer>
+{% unless page.sharing == false %}
+	{% include post/sharing.html %}
+{% endunless %}
+{% if site.disqus_short_name and page.comments == true %}
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite">{% include post/disqus_thread.html %}</div>
+</section>
+{% endif %}
